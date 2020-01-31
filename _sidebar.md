@@ -1,9 +1,7 @@
-* **基础**
-    * [快速开始](zh-cn/quickstart.md)
-    * [多页文档](zh-cn/more-pages.md)
-    * [定制导航栏](zh-cn/custom-navbar.md)
-    * [封面](zh-cn/cover.md)
+* **鸿蒙初辟**
+    * [关于](about.md)
+    * [本站](website.md)
   
-* **解决**
+* **日积月累**
     * [快速开始](zh-cn/quickstart.md)
     * [快速开始](zh-cn/quickstart.md)
