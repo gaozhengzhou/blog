@@ -1,5 +1,19 @@
 # Jenkins Pipeline
 
+## 理念
+> Pipeline as code
+
+## 依赖
+    jenkins
+    gitlab
+    maven
+    nexus
+    nodejs
+    npm
+    yarn
+    docker
+    kubernetes
+
 ## 流程
 ![img](images/jenkins-pipeline/jenkins-pipeline.png)
 
