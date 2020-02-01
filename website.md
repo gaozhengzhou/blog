@@ -1,5 +1,5 @@
 # 关于本站
-本站是使用GitHub Pages + Docsify搭建的个人网站，使用GitHub Pages可以节省租用服务器的费用，
+本站使用GitHub Pages + Docsify搭建，使用GitHub Pages可以节省租用服务器的费用，
 Docsify是一个动态生成文档网站的工具，支持markdown，不会生成多余的html文件。
 ## 知识点
     GitHub
