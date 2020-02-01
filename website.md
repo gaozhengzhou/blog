@@ -59,9 +59,9 @@ Docsify是一个动态生成文档网站的工具，样式清爽，支持markdow
 - 在source选择master branch, 在custom domain输入www.gaozhengzhou.com, 勾选Enforce HTTPS
 ![img](images/website/blog-settings-github-pages.png)
 
-## 访问网站
-![img](images/website/docsify-deploy-preview.png)
-
-## 使用idea编辑网站
+## 使用Idea编辑网站
 docsify帮助文档请看<https://docsify.js.org/>
 ![img](images/website/idea.png)
+
+## 访问网站
+![img](images/website/docsify-deploy-preview.png)

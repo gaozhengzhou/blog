@@ -9,4 +9,4 @@
     * [Nexus安装](nexus.md)
     * [Jenkins安装](jenkins.md)
     * [Docker安装](docker.md)
-    * [kubernetes安装](kubernetes.md)
+    * [Kubernetes安装](kubernetes.md)
