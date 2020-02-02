@@ -20,7 +20,7 @@ export GIT_KEYFILE=~/.id_rsa_git
 ```
 _执行 `source /root/.bashrc`应用环境变量_
 
-- 然后就可以无感使用git命令了  
+- 然后就可以直接使用git命令了  
 `git clone git@192.168.0.68:gzz/test.git`
 
 
