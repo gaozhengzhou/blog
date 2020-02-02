@@ -63,7 +63,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDmJeH39utZI2tdX16F0ihqUVKsKJa5rjG+3SdLS8vS
 [root@izwz990g1xkweknerwfutcz ~]#
 ```
 
-## 测试连接
+## 连接测试
 `ssh -p 15022 root@192.168.0.71`
 
 ```
