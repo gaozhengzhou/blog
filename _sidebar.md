@@ -13,4 +13,4 @@
     * [Centos7.4安装U盘制作](centos.md)
     * [OpenVPN服务搭建](openvpn.md)
     * [Supervisor使用](supervisor.md)
-    * [删除Rancker节点](delete-rancher-node.md)
+    * [删除rancker节点](delete-rancher-node.md)
