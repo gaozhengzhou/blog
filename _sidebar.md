@@ -9,7 +9,7 @@
     * [Nexus安装](nexus.md)
     * [Jenkins安装](jenkins.md)
     * [Docker安装](docker.md)
-    * [Kubernetes安装](kubernetes.md)
+    * [使用rancher1.6搭建Kubernetes集群](kubernetes.md)
     * [Centos7.4安装U盘制作](centos.md)
     * [OpenVPN服务搭建](openvpn.md)
     * [Supervisor使用](supervisor.md)
