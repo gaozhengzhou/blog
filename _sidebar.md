@@ -14,3 +14,5 @@
     * [OpenVPN服务搭建](openvpn.md)
     * [Supervisor使用](supervisor.md)
     * [删除rancker节点](delete-rancher-node.md)
+    * [SSH免密登录](ssh-key.md)
+    * [git命令指定ssh-key文件](git-special-ssh-key.md)
