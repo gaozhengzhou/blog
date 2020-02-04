@@ -10,7 +10,6 @@
     * [Jenkins安装](jenkins.md)
     * [Docker安装](docker.md)
     * [Rancher1.6安装](rancher1.6.md)
-    * [Centos7.4安装U盘制作](centos.md)
     * [OpenVPN服务搭建](openvpn.md)
     * [Supervisor使用](supervisor.md)
     * [SSH免密登录](ssh-key.md)
