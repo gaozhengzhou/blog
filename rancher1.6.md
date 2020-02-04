@@ -45,79 +45,76 @@
 - 在模板版本选择当前默认， 在Plane Isolation选择required  
 ![img](images/rancher1.6/rancher-9.png)
 
-- dsf  
+- 在Enable Rancher Ingress Controller勾选False  
 ![img](images/rancher1.6/rancher-10.png)
 
-- dsf  
+- 点击设置  
 ![img](images/rancher1.6/rancher-11.png)
 
-- dsf  
+- 点击创建  
 ![img](images/rancher1.6/rancher-12.png)
 
-- dsf  
+- 点击添加环境  
 ![img](images/rancher1.6/rancher-13.png)
 
-- dsf  
+- 输入名称和描述，在环境模板选择K8S隔离平面  
 ![img](images/rancher1.6/rancher-14.png)
 
-- dsf  
+- 点击创建  
 ![img](images/rancher1.6/rancher-15.png)
 
-- dsf  
+- 点击设置为缺省，点击切换至此环境  
 ![img](images/rancher1.6/rancher-16.png)
 
-- dsf  
+- 点击添加主机  
 ![img](images/rancher1.6/rancher-17.png)
 
-- dsf  
+- 勾选其他地址，输入rancher的内网地址，然后保存  
 ![img](images/rancher1.6/rancher-18.png)
 
-- dsf  
+- 选择Custom  
 ![img](images/rancher1.6/rancher-19.png)
 
-- dsf  
+- 在标签添加etcd=true和orchestration=true，获得数据平面+编排平面节点注册脚本   
 ![img](images/rancher1.6/rancher-20.png)
 
-- dsf  
+- 在标签添加compute=true，获得计算平面节点注册脚本  
 ![img](images/rancher1.6/rancher-21.png)
 
-- dsf  
+- 在第1台数据平面+编排平面节点执行注册脚本    
+    `sudo docker run -e CATTLE_HOST_LABELS='etcd=true&orchestration=true'  --rm --privileged -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/rancher:/var/lib/rancher rancher/agent:v1.2.11 http://172.18.44.234:8080/v1/scripts/1B7ACCFAA4D5741B91A5:1577750400000:8FrWaPCl4SqKpw8iiyBr39BHFM`
+  
+    ![img](images/rancher1.6/rancher-23.png)
+
+- 点击基础架构->主机  
 ![img](images/rancher1.6/rancher-22.png)
 
-- dsf  
-![img](images/rancher1.6/rancher-23.png)
-
-- dsf  
+- 可以看到已注册的数据平面+编排平面节点  
 ![img](images/rancher1.6/rancher-24.png)
 
-- dsf  
+- 数据平面+编排平面节点注册完成后，点击KUBERNETES->CLI，点击生成配置  
 ![img](images/rancher1.6/rancher-25.png)
 
-- dsf  
+- 点击复制到剪贴板  
 ![img](images/rancher1.6/rancher-26.png)
 
-- dsf  
+- 将设置保存到~/.kube/config文件，然后就可以使用kubectl命令了
 ![img](images/rancher1.6/rancher-27.png)
 
-- dsf  
-![img](images/rancher1.6/rancher-28.png)
-
-- dsf  
-![img](images/rancher1.6/rancher-29.png)
-
-
-
-
+- 然后在另外两台数据平面+编排平面节点执行注册脚本 
 
 ## 添加3台数据平面+编排平面节点（在数据平面+编排平面ECS执行）
 示例（实际命令在Rancher管理界面生成）：  
 `sudo docker run -e CATTLE_HOST_LABELS='etcd=true&orchestration=true'  --rm --privileged -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/rancher:/var/lib/rancher rancher/agent:v1.2.11 http://172.18.44.234:8080/v1/scripts/1B7ACCFAA4D5741B91A5:1577750400000:8FrWaPCl4SqKpw8iiyBr39BHFM`
 
 ## 添加3台计算平面节点（在计算平面ECS执行）
-示例（实际命令在Rancher管理界面生成）：  
-`sudo docker run -e CATTLE_HOST_LABELS='compute=true'  --rm --privileged -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/rancher:/var/lib/rancher rancher/agent:v1.2.11 http://172.18.44.234:8080/v1/scripts/1B7ACCFAA4D5741B91A5:1577750400000:8FrWaPCl4SqKpw8iiyBr39BHFM`
+- 在计算平面节点执行注册脚本  
+    `sudo docker run -e CATTLE_HOST_LABELS='compute=true'  --rm --privileged -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/rancher:/var/lib/rancher rancher/agent:v1.2.11 http://172.18.44.234:8080/v1/scripts/1B7ACCFAA4D5741B91A5:1577750400000:8FrWaPCl4SqKpw8iiyBr39BHFM`
+    
+    ![img](images/rancher1.6/rancher-28.png)
 
-
+- 可以看到已注册的计算平面节点    
+![img](images/rancher1.6/rancher-29.png)
 
 ## \* 删除计算平面节点操作
 ing
