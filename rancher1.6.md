@@ -103,10 +103,6 @@
 
 - 然后在另外两台数据平面+编排平面节点执行注册脚本 
 
-## 添加3台数据平面+编排平面节点（在数据平面+编排平面ECS执行）
-示例（实际命令在Rancher管理界面生成）：  
-`sudo docker run -e CATTLE_HOST_LABELS='etcd=true&orchestration=true'  --rm --privileged -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/rancher:/var/lib/rancher rancher/agent:v1.2.11 http://172.18.44.234:8080/v1/scripts/1B7ACCFAA4D5741B91A5:1577750400000:8FrWaPCl4SqKpw8iiyBr39BHFM`
-
 ## 添加3台计算平面节点（在计算平面ECS执行）
 - 在计算平面节点执行注册脚本  
     `sudo docker run -e CATTLE_HOST_LABELS='compute=true'  --rm --privileged -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/rancher:/var/lib/rancher rancher/agent:v1.2.11 http://172.18.44.234:8080/v1/scripts/1B7ACCFAA4D5741B91A5:1577750400000:8FrWaPCl4SqKpw8iiyBr39BHFM`
