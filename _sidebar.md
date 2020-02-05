@@ -11,6 +11,6 @@
     * [Docker安装](docker.md)
     * [Rancher1.6安装](rancher1.6.md)
     * [OpenVPN服务搭建](openvpn.md)
-    * [Supervisor使用](supervisor.md)
+    * [Supervisor安装使用](supervisor.md)
     * [SSH免密登录](ssh-key.md)
     * [Git命令指定ssh-key文件](git-special-ssh-key.md)
