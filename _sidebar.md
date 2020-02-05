@@ -8,7 +8,7 @@
     * [GitLab安装](gitlab.md)
     * [Nexus安装](nexus.md)
     * [Jenkins安装](jenkins.md)
-    * [Docker安装](docker.md)
+    * [Docker17.03安装](docker17.03.md)
     * [Rancher1.6安装](rancher1.6.md)
     * [OpenVPN服务搭建](openvpn.md)
     * [Supervisor安装使用](supervisor.md)
