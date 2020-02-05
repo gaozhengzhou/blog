@@ -14,3 +14,4 @@
     * [Supervisor安装使用](supervisor.md)
     * [SSH免密登录](ssh-key.md)
     * [Git命令指定ssh-key文件](git-special-ssh-key.md)
+    * [MySQL5.6安装](mysql5.6.md)
