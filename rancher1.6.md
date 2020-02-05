@@ -113,4 +113,35 @@
 ![img](images/rancher1.6/rancher-29.png)
 
 ## \* 删除计算平面节点操作
-- 
+- 点击基础架构->主机  
+![img](images/rancher1.6/rancher-33.png)
+
+- 找到要删除的节点，点击停用  
+![img](images/rancher1.6/rancher-34.png)
+
+- 找到要删除的节点，点击删除  
+![img](images/rancher1.6/rancher-35.png)
+
+- 点击删除  
+![img](images/rancher1.6/rancher-36.png)
+
+- 点击KUBERNETES->仪表板，点击Kubernetes UI   
+![img](images/rancher1.6/rancher-30.png)
+
+- 选择ldx命名空间  
+![img](images/rancher1.6/rancher-31.png)
+
+- 点击部署  
+![img](images/rancher1.6/rancher-32.png)
+
+- 查看各服务是否正常  
+![img](images/rancher1.6/rancher-37.png)
+
+- 在被删除的计算节点执行以下脚本清除rancher容器  
+    `sudo curl https://www.gaozhengzhou.com/cleanup.sh > ./cleanup.sh && chmod a+x ./cleanup.sh && sudo ./cleanup.sh`  
+    
+    `for mount in $(mount | grep tmpfs | grep '/var/lib/kubelet' | awk '{ print $3 }') /var/lib/kubelet /var/lib/rancher; do sudo umount $mount; done`  
+    
+    `sudo rm -rf /etc/ceph /etc/cni /etc/kubernetes /opt/cni /opt/rke /run/secrets/kubernetes.io /run/calico /run/flannel /var/lib/calico /var/lib/etcd /var/lib/cni /var/lib/kubelet /var/lib/rancher/rke/log /var/log/containers /var/log/pods /var/run/calico`    
+
+
