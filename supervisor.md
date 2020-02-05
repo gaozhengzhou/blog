@@ -28,7 +28,7 @@
 - 解压到/usr/apps/  
     `tar zxvf apache-tomcat-8.5.50.tar.gz -C /usr/apps/`
     
-- 重命名并进入tomcat目录
+- 重命名并进入tomcat目录  
     `mv /usr/apps/apache-tomcat-8.5.50/ /usr/apps/tomcat8/`    
     `cd /usr/apps/tomcat8/` 
 
