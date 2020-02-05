@@ -128,7 +128,7 @@
 - 点击KUBERNETES->仪表板，点击Kubernetes UI   
 ![img](images/rancher1.6/rancher-30.png)
 
-- 选择ldx命名空间  
+- 选择命名空间  
 ![img](images/rancher1.6/rancher-31.png)
 
 - 点击部署  
