@@ -32,6 +32,21 @@
 - 输入用户名和密码，点击启用本地验证
 ![img](images/rancher1.6/rancher-5.png)
 
+- 点击系统管理->系统设置  
+![img](images/rancher1.6/rancher-38.png)
+
+- 输入内网地址，保存  
+![img](images/rancher1.6/rancher-39.png)
+
+- 点击我确认已经知道修改高级设置可能导致问题
+![img](images/rancher1.6/rancher-40.png)
+
+- 找到audit_log.purge.after.seconds，点击编辑按钮
+![img](images/rancher1.6/rancher-41.png)
+
+- 输入1800并保存
+![img](images/rancher1.6/rancher-42.png)
+
 ## 创建K8S环境（在Rancher管理界面执行）
 - 进入环境管理  
 ![img](images/rancher1.6/rancher-6.png)
@@ -68,9 +83,6 @@
 
 - 点击添加主机  
 ![img](images/rancher1.6/rancher-17.png)
-
-- 勾选其他地址，输入rancher的内网地址，然后保存  
-![img](images/rancher1.6/rancher-18.png)
 
 - 选择Custom  
 ![img](images/rancher1.6/rancher-19.png)
