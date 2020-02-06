@@ -120,7 +120,7 @@
 
 ### Client端
 #### 生成无密码客户端密钥
-- 每个客户端一个密钥  
+- 每个客户端一个密钥（在服务端执行）  
     `CLIENTNAME=gzz`  
     `easyrsa build-client-full ${CLIENTNAME} nopass`  
     
