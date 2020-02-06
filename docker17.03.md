@@ -6,7 +6,7 @@ yum install epel-release -y
   
 - 安装常用工具
 ```
-yum install -y wget curl telnet bash-completion net-tools nmap htop yum-utils
+yum install -y wget curl telnet bash-completion net-tools nmap htop yum-utils dstat
 ```
    
 - 下载docker安装包  
