@@ -4,7 +4,6 @@
   
 * **日积月累**
     * [Jenkins Pipeline](jenkins-pipeline.md)
-    * [Go MySQL Elasticsearch](go-mysql-elasticsearch.md)
     * [GitLab安装](gitlab.md)
     * [Nexus安装](nexus.md)
     * [Jenkins安装](jenkins.md)
