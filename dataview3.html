@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>demo2</title>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <style>
+    html,body{
+      margin:0;
+      padding:0;
+    }
+  </style>
+</head>
+<body>
+<iframe id="datav" src="https://datav.aliyuncs.com/share/41de90ab8af847cfc71f72e17862e60b"  frameborder="no" border="0"marginwidth="0" marginheight="0" scrolling="yes" allowtransparency="yes"></iframe>
+</body>
+<script>
+  $(function(){
+    resizeIframe();
+    $(window).resize(function() {
+      resizeIframe();
+    });
+
+    function resizeIframe() {
+      var datav = $("#datav");
+      var width = $(document.body).width();
+      var height = width * 1900 / 1080 + 20;
+      datav.width(width);
+      datav.height(height);
+    }
+  });
+</script>
+</html>
