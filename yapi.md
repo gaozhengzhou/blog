@@ -1,4 +1,5 @@
-# YApi安装
+# YApi安装  
+YApi 是一个可本地部署的、打通前后端及QA的、可视化的接口管理平台。
 
 ### 项目源码
 github: <https://github.com/YMFE/yapi>
