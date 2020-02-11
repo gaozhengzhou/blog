@@ -3,7 +3,7 @@
 ## 官网
 https://www.mongodb.com/download-center/community
 
-### 环境准备
+## 环境准备
 - 安装supervisor 
 [Supervisor安装使用](supervisor.md)  
 
