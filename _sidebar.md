@@ -15,3 +15,7 @@
     * [Git命令指定ssh-key文件](git-special-ssh-key.md)
     * [MySQL5.6安装](mysql5.6.md)
     * [kubectl安装](kubectl.md)
+    * [YApi安装](yapi.md)
+    * [Node.js安装](nodejs.md)
+    * [mongodb安装](mongodb.md)
+    
