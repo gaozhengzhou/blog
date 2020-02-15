@@ -18,4 +18,5 @@
     * [YApi安装](yapi.md)
     * [Node.js安装](nodejs.md)
     * [mongodb安装](mongodb.md)
+    * [JumpServer安装](jumpserver.md)
     
