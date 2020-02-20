@@ -1128,14 +1128,7 @@ stream {
             {{ $proxySetHeader }} X-Forwarded-For        $remote_addr;
             {{ end }}
             {{ $proxySetHeader }} X-Forwarded-Host       $best_http_host;
-
-            set $x_scheme        $http_x_forwarded_proto;
-            set $x_port          $pass_server_port;
-            if ($x_scheme = "https") {
-              set $x_port          443;
-            }
-
-            {{ $proxySetHeader }} X-Forwarded-Port       $x_port;
+            {{ $proxySetHeader }} X-Forwarded-Port       $pass_port;
             {{ $proxySetHeader }} X-Forwarded-Proto      $pass_access_scheme;
             {{ if $all.Cfg.ProxyAddOriginalURIHeader }}
             {{ $proxySetHeader }} X-Original-URI         $request_uri;
