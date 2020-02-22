@@ -33,6 +33,9 @@ RUN curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo |  tee /etc/yu
 RUN curl --silent --location https://www.gaozhengzhou.com/kubernetes/kubernetes.repo |  tee /etc/yum.repos.d/kubernetes.repo; \
         yum install -y kubectl;
 
+# install jenkins jnlp agent
+RUN
+
 # setting env
 ENV JENKINS_UC="https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates"
 ENV JENKINS_UC_EXPERIMENTAL="https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/experimental"
