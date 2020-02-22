@@ -10,8 +10,8 @@ USER root
 RUN yum install -y epel-release; \
         yum install -y libtool-ltdl;
 
-# install maven git
-RUN yum install -y maven git;
+# install maven git curl wget
+RUN yum install -y maven git curl wget;
 
 # install python3
 RUN yum install -y python3; \
