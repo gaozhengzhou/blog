@@ -50,6 +50,9 @@ RUN wget https://www.gaozhengzhou.com/jenkins/docker/agent/agent.jar -O /usr/sha
 RUN wget https://www.gaozhengzhou.com/git/git-ssh.sh -O /usr/local/bin/git-ssh.sh; \
         chmod +x /usr/local/bin/git-ssh.sh;
 
+# setting ssh client
+RUN echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config;
+
 # setting env
 ENV JENKINS_UC=https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates
 ENV JENKINS_UC_EXPERIMENTAL=https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/experimental
