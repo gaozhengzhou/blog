@@ -23,7 +23,7 @@ RUN yum install -y nodejs; \
         npm config set registry https://registry.npm.taobao.org/;
 
 # install yarn
-RUN curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo |  tee /etc/yum.repos.d/yarn.repo; \
+RUN curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo; \
         yum install -y yarn; \
         yarn config set registry https://registry.npm.taobao.org/;
 
