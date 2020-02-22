@@ -23,9 +23,13 @@ RUN yum install -y nodejs; \
         npm config set registry https://registry.npm.taobao.org/;
 
 # install yarn
-RUN curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo; \
+RUN curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo |  tee /etc/yum.repos.d/yarn.repo; \
         yum install -y yarn; \
         yarn config set registry https://registry.npm.taobao.org/;
+
+# install kubectl
+RUN curl --silent --location https://www.gaozhengzhou.com/kubernetes/kubernetes.repo |  tee /etc/yum.repos.d/kubernetes.repo; \
+        yum install -y kubectl;
 
 # setting env
 ENV JENKINS_UC="https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates"
