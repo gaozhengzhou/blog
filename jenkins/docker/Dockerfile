@@ -7,6 +7,14 @@
 FROM jenkins/jenkins:lts-centos
 USER root
 
+# create directory
+RUN mkdir -p /data/jenkins_credentials/docker; \
+    mkdir -p /data/jenkins_credentials/kube; \
+    mkdir -p /data/jenkins_credentials/maven; \
+    mkdir -p /data/jenkins_credentials/ssh; \
+    mkdir -p /data/jenkins_repository; \
+    mkdir -p /data/jenkins_home;
+
 # install docker dependency libtool
 RUN yum install -y epel-release; \
         yum install -y libtool-ltdl;
@@ -38,10 +46,19 @@ RUN wget https://www.gaozhengzhou.com/jenkins/docker/agent/agent.jar -O /usr/sha
         wget https://www.gaozhengzhou.com/jenkins/docker/agent/jenkins-agent -O /usr/local/bin/jenkins-agent; \
         chmod +x /usr/local/bin/jenkins-agent;
 
+# setting git-ssh
+RUN wget https://www.gaozhengzhou.com/git/git-ssh.sh -O /usr/local/bin/git-ssh.sh; \
+        chmod +x /usr/local/bin/git-ssh.sh;
+
 # setting env
-ENV JENKINS_UC="https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates"
-ENV JENKINS_UC_EXPERIMENTAL="https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/experimental"
-ENV JENKINS_HOME="/data/jenkins_home"
-ENV CREDENTIALS_HOME="/data/jenkins_credentials"
-ENV REPOSITORY_HOME="/data/jenkins_repository"
+ENV JENKINS_UC=https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates
+ENV JENKINS_UC_EXPERIMENTAL=https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/experimental
+ENV JENKINS_HOME=/data/jenkins_home
+ENV DOCKER_CREDENTIALS_HOME=/data/jenkins_credentials/docker
+ENV KUBE_CREDENTIALS_HOME=/data/jenkins_credentials/kube
+ENV MAVEN_CREDENTIALS_HOME=/data/jenkins_credentials/maven
+ENV SSH_CREDENTIALS_HOME=/data/jenkins_credentials/ssh
+ENV REPOSITORY_HOME=/data/jenkins_repository
+ENV GIT_SSH=/usr/local/bin/git-ssh.sh
+ENV GIT_KEYFILE=${SSH_CREDENTIALS_HOME}/id_rsa
 
