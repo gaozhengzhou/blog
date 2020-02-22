@@ -34,5 +34,7 @@ RUN curl --silent --location https://www.gaozhengzhou.com/kubernetes/kubernetes.
 # setting env
 ENV JENKINS_UC="https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates"
 ENV JENKINS_UC_EXPERIMENTAL="https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/experimental"
-ENV CREDENTIAL_HOME="/data/jenkins_credentials"
+ENV JENKINS_HOME="/data/jenkins_home"
+ENV CREDENTIALS_HOME="/data/jenkins_credentials"
+ENV REPOSITORY_HOME="/data/jenkins_repository"
 
