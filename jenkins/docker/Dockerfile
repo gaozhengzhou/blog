@@ -11,8 +11,8 @@ USER root
 RUN yum install -y epel-release; \
         yum install -y libtool-ltdl;
 
-# install maven git curl wget
-RUN yum install -y maven git curl wget;
+# install maven git curl wget redis etc.
+RUN yum install -y maven git curl wget redis;
 
 # install python3
 RUN yum install -y python3; \
@@ -34,7 +34,9 @@ RUN curl --silent --location https://www.gaozhengzhou.com/kubernetes/kubernetes.
         yum install -y kubectl;
 
 # install jenkins jnlp agent
-RUN
+RUN wget https://www.gaozhengzhou.com/jenkins/docker/agent/agent.jar -O /usr/share/jenkins/agent.jar; \
+        wget https://www.gaozhengzhou.com/jenkins/docker/agent/jenkins-agent -O /usr/local/bin/jenkins-agent; \
+        chmod +x /usr/local/bin/jenkins-agent;
 
 # setting env
 ENV JENKINS_UC="https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates"
