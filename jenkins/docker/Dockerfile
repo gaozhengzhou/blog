@@ -46,14 +46,19 @@ RUN wget https://www.gaozhengzhou.com/jenkins/docker/agent/agent.jar -O /usr/sha
         wget https://www.gaozhengzhou.com/jenkins/docker/agent/jenkins-agent -O /usr/local/bin/jenkins-agent; \
         chmod +x /usr/local/bin/jenkins-agent;
 
-# setting git-ssh
+# git-ssh
 RUN wget https://www.gaozhengzhou.com/git/git-ssh.sh -O /usr/local/bin/git-ssh.sh; \
         chmod +x /usr/local/bin/git-ssh.sh;
 
-# setting ssh client
+# ssh client
 RUN echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config;
 
-# setting env
+# timezone
+RUN set -eux; \
+        ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime; \
+        echo "Asia/Shanghai" > /etc/timezone;
+
+# env
 ENV JENKINS_UC=https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates
 ENV JENKINS_UC_EXPERIMENTAL=https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/experimental
 ENV JENKINS_HOME=/data/jenkins_home
