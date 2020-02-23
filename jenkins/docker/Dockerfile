@@ -62,11 +62,12 @@ RUN set -eux; \
 ENV JENKINS_UC=https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates
 ENV JENKINS_UC_EXPERIMENTAL=https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/experimental
 ENV JENKINS_HOME=/data/jenkins/home
-ENV DOCKER_CREDENTIALS_HOME=/data/jenkins/credentials/docker
-ENV KUBE_CREDENTIALS_HOME=/data/jenkins/credentials/kube
-ENV MAVEN_CREDENTIALS_HOME=/data/jenkins/credentials/maven
-ENV SSH_CREDENTIALS_HOME=/data/jenkins/credentials/ssh
+ENV CREDENTIALS_HOME=/data/jenkins/credentials
 ENV REPOSITORY_HOME=/data/jenkins/repository
+ENV DOCKER_CREDENTIALS_HOME=${CREDENTIALS_HOME}/docker
+ENV KUBE_CREDENTIALS_HOME=${CREDENTIALS_HOME}/kube
+ENV MAVEN_CREDENTIALS_HOME=${CREDENTIALS_HOME}/maven
+ENV SSH_CREDENTIALS_HOME=${CREDENTIALS_HOME}/ssh
 ENV GIT_SSH=/usr/local/bin/git-ssh.sh
 ENV GIT_KEYFILE=${SSH_CREDENTIALS_HOME}/id_rsa
 
