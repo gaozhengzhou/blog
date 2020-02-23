@@ -11,10 +11,10 @@ docker build --tag=registry-vpc.cn-shenzhen.aliyuncs.com/lhs11/jenkins:latest .
 docker push registry-vpc.cn-shenzhen.aliyuncs.com/lhs11/jenkins:latest
 
 ## Master节点部署
-- 方法一：docker环境    
-docker run -d --restart=unless-stopped -p 30010:8080 -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker -v /data:/data registry-vpc.cn-shenzhen.aliyuncs.com/lhs11/jenkins:latest
+### Docker环境    
+docker run -d --restart=unless-stopped -p 30010:8080 -p 50000:50000 -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker -v /data:/data registry-vpc.cn-shenzhen.aliyuncs.com/lhs11/jenkins:latest
 
-- 方法二：kubernetes环境  
+### Kubernetes环境  
 kubectl apply -f jenkins.yml  
 
 ```jenkins.yml
@@ -292,7 +292,33 @@ sed -i 's/http:\/\/www.google.com/https:\/\/www.baidu.com/g' /data/jenkins/home/
 - 取消勾选“防止跨站点请求伪造”，然后保存  
 ![img](images/jenkins/jenkins-14.png)
 
-## 安装插件  
+## Slave节点部署
+### Docker环境  
+- 点击“系统管理”    
+![img](images/jenkins/jenkins-15.png)
+
+- 点击“节点管理”  
+![img](images/jenkins/jenkins-16.png)
+
+- 点击“新增节点”  
+![img](images/jenkins/jenkins-17.png)
+
+- 输入名称，勾选“固定节点”，点击确定    
+![img](images/jenkins/jenkins-18.png)
+
+- 输入远程工作目录，在启动方式选择“通过Java Web启动代理”，然后保存  
+![img](images/jenkins/jenkins-19.png)
+
+- 点击进入节点  
+![img](images/jenkins/jenkins-20.png)
+
+- 复制secret  
+![img](images/jenkins/jenkins-21.png)
+
+- 使用docker启动agent  
+docker run -d --restart=unless-stopped -e JENKINS_URL=http://192.168.0.68:30010/ -e JENKINS_SECRET=da00e4bd4877cb6bfbc7cc25fb278893e5a6b5627274b452a2251d2541f66da1 -e JENKINS_AGENT_WORKDIR=/home/jenkins/agent -e JENKINS_AGENT_NAME=jnlp-001 -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker -v /data:/data registry-vpc.cn-shenzhen.aliyuncs.com/lhs11/jenkins:latest jenkins-agent 
+
+### Kubernates环境
 - 点击Manage Jenkins  
 ![img](images/jenkins/jenkins-8.png)
 
@@ -302,16 +328,40 @@ sed -i 's/http:\/\/www.google.com/https:\/\/www.baidu.com/g' /data/jenkins/home/
 - 点击Available      
 ![img](images/jenkins/jenkins-10.png)
 
-- 选中安装以下插件  
-```
-Role-based Authorization Strategy
+- 选中安装Kubernetes插件  
+![img](images/jenkins/jenkins-22.png)
 
-```
+- 点击“系统管理”    
+![img](images/jenkins/jenkins-15.png)
 
+- 点击“系统配置”    
+![img](images/jenkins/jenkins-23.png)
 
+- 点击新增一个Kubernetes云      
+![img](images/jenkins/jenkins-24.png)
 
+- 输入一下配置信息，然后保存  
+![img](images/jenkins/jenkins-25.png)
+![img](images/jenkins/jenkins-26.png)
+![img](images/jenkins/jenkins-27.png)
+![img](images/jenkins/jenkins-28.png)
+![img](images/jenkins/jenkins-29.png)
+![img](images/jenkins/jenkins-30.png)
+![img](images/jenkins/jenkins-31.png)
+![img](images/jenkins/jenkins-32.png)
+![img](images/jenkins/jenkins-33.png)
+![img](images/jenkins/jenkins-34.png)
+![img](images/jenkins/jenkins-35.png)
+![img](images/jenkins/jenkins-36.png)
 
+- 点击“构建执行状态”  
+![img](images/jenkins/jenkins-37.png)
 
+- 点击master  
+![img](images/jenkins/jenkins-38.png)
 
+- 点击配置从节点  
+![img](images/jenkins/jenkins-39.png)
 
-
+- 在执行器数量输入0，然后保存   
+![img](images/jenkins/jenkins-40.png)
