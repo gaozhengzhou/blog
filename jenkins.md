@@ -313,7 +313,7 @@ sed -i 's/http:\/\/www.google.com/https:\/\/www.baidu.com/g' /data/jenkins/home/
 - 取消勾选“防止跨站点请求伪造”，然后保存  
 ![img](images/jenkins/jenkins-14.png)
 
-## Slave节点部署
+## Slave节点部署（可选）
 ### Docker环境  
 - 点击“系统管理”    
 ![img](images/jenkins/jenkins-15.png)
@@ -386,3 +386,25 @@ docker run -d --restart=unless-stopped -e JENKINS_URL=http://192.168.0.68:30010/
 
 - 在执行器数量输入0，然后保存   
 ![img](images/jenkins/jenkins-40.png)
+
+## 附录
+### 目录说明
+```
+/data/jenkins/
+├── credentials
+│   ├── docker
+│   │   └── config.json ## docker配置文件
+│   ├── kube
+│   │   ├── p_k8s_config ## 生产环境kubectl配置文件
+│   │   ├── t_k8s_config ## 测试环境kubectl配置文件
+│   ├── maven
+│   │   ├── settings-production.xml ## 生产环境maven配置文件
+│   │   └── settings-test.xml ## 测试环境maven配置文件
+│   └── ssh
+│       └── id_rsa ## ssh私钥
+├── home  ## jenkins的home目录
+└── repository
+    ├── maven-production ## 生产环境maven仓库
+    └── maven-test ## 测试环境maven仓库
+```
+
