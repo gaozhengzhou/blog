@@ -19,6 +19,25 @@ kubectl apply -f jenkins.yml
 
 ```jenkins.yml
 apiVersion: v1
+kind: Namespace
+metadata:
+  name: ldx
+
+---
+# execute flow command to get .dockerconfigjson string
+# docker login --username=test --password=123456 registry-vpc.cn-shenzhen.aliyuncs.com
+# cat /root/.docker/config.json | base64 -w 0
+kind: Secret
+apiVersion: v1
+metadata:
+  name: ldx-registry-key
+  namespace: ldx
+data:
+  .dockerconfigjson: 1dGhzIjogewoJCSJyZWdpc3RyeS12cGMuY24tc2hlbnpoZW4uYWxpeXVuY3MuY29tIjogewoJCQkiYXV0aCI6ICJhbTlsUURFeU1UTXhNelUxTWpNd01USXpOVEU2Ykdoek1UUTNNalU0IgoJCX0sCgkJInJlZ2lzdHJ5LmNuLXNoZW56aGVuLmFsaXl1bmNzLmNvbSI6IHsKCQkJImF1dGgiOiAiYW05bFFERXlNVE14TXpVMU1qTXdNVEl6TlRFNmJHaHpNVFEzTWpVNCIKCQl9Cgl9LAoJIkh0dHBIZWFkZXJzIjogewoJCSJVc2VyLUFnZW50IjogIkRvY2tlci1DbGllb
+type: kubernetes.io/dockerconfigjson
+
+---
+apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: jenkins-serviceaccount
