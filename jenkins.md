@@ -246,8 +246,10 @@ spec:
 
 ## Jenkins安装向导
 - 替换jenkins服务器的default.json    
+```
 sed -i 's/http:\/\/updates.jenkins-ci.org\/download/https:\/\/mirrors.tuna.tsinghua.edu.cn\/jenkins/g' /data/jenkins/home/updates/default.json
 sed -i 's/http:\/\/www.google.com/https:\/\/www.baidu.com/g' /data/jenkins/home/updates/default.json
+```
 
 - 重启jenkins，确保让default.json生效  
 
