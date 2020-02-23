@@ -342,7 +342,7 @@ docker run -d --restart=unless-stopped -e JENKINS_URL=http://192.168.0.68:30010/
 - 点击新增一个Kubernetes云      
 ![img](images/jenkins/jenkins-24.png)
 
-- 输入一下配置信息，然后保存  
+- 输入以下配置信息，然后保存  
 ![img](images/jenkins/jenkins-25.png)
 ![img](images/jenkins/jenkins-26.png)
 ![img](images/jenkins/jenkins-27.png)
