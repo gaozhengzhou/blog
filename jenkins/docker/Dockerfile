@@ -8,12 +8,12 @@ FROM jenkins/jenkins:lts-centos
 USER root
 
 # create directory
-RUN mkdir -p /data/jenkins_credentials/docker; \
-    mkdir -p /data/jenkins_credentials/kube; \
-    mkdir -p /data/jenkins_credentials/maven; \
-    mkdir -p /data/jenkins_credentials/ssh; \
-    mkdir -p /data/jenkins_repository; \
-    mkdir -p /data/jenkins_home;
+RUN mkdir -p /data/jenkins/credentials/docker; \
+    mkdir -p /data/jenkins/credentials/kube; \
+    mkdir -p /data/jenkins/credentials/maven; \
+    mkdir -p /data/jenkins/credentials/ssh; \
+    mkdir -p /data/jenkins/repository; \
+    mkdir -p /data/jenkins/home;
 
 # install docker dependency libtool
 RUN yum install -y epel-release; \
@@ -61,12 +61,12 @@ RUN set -eux; \
 # env
 ENV JENKINS_UC=https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates
 ENV JENKINS_UC_EXPERIMENTAL=https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/experimental
-ENV JENKINS_HOME=/data/jenkins_home
-ENV DOCKER_CREDENTIALS_HOME=/data/jenkins_credentials/docker
-ENV KUBE_CREDENTIALS_HOME=/data/jenkins_credentials/kube
-ENV MAVEN_CREDENTIALS_HOME=/data/jenkins_credentials/maven
-ENV SSH_CREDENTIALS_HOME=/data/jenkins_credentials/ssh
-ENV REPOSITORY_HOME=/data/jenkins_repository
+ENV JENKINS_HOME=/data/jenkins/home
+ENV DOCKER_CREDENTIALS_HOME=/data/jenkins/credentials/docker
+ENV KUBE_CREDENTIALS_HOME=/data/jenkins/credentials/kube
+ENV MAVEN_CREDENTIALS_HOME=/data/jenkins/credentials/maven
+ENV SSH_CREDENTIALS_HOME=/data/jenkins/credentials/ssh
+ENV REPOSITORY_HOME=/data/jenkins/repository
 ENV GIT_SSH=/usr/local/bin/git-ssh.sh
 ENV GIT_KEYFILE=${SSH_CREDENTIALS_HOME}/id_rsa
 
