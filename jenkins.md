@@ -408,3 +408,46 @@ docker run -d --restart=unless-stopped -e JENKINS_URL=http://192.168.0.68:30010/
     └── maven-test ## 测试环境maven仓库
 ```
 
+### 角色权限设置
+- 点击Manage Jenkins  
+![img](images/jenkins/jenkins-8.png)
+
+- 点击Manage Plugins  
+![img](images/jenkins/jenkins-9.png)
+
+- 点击Available      
+![img](images/jenkins/jenkins-10.png)
+
+- 选中安装Role-based Authorization Strategy和Authorize Project插件  
+![img](images/jenkins/jenkins-41.png)
+![img](images/jenkins/jenkins-43.png)
+
+- 点击“系统管理”    
+![img](images/jenkins/jenkins-15.png)
+
+- 点击Configure Global Security   
+![img](images/jenkins/jenkins-13.png)
+
+- 勾选Role-Based Strategy，配置Access Control for Builds，然后保存  
+![img](images/jenkins/jenkins-42.png)
+![img](images/jenkins/jenkins-45.png)
+
+- 点击Manage and Assign Roles  
+![img](images/jenkins/jenkins-46.png)
+
+- 点击Manage Roles  
+![img](images/jenkins/jenkins-47.png)
+
+- 在Global Roles新增user角色  
+![img](images/jenkins/jenkins-48.png)
+
+- 在Item Roles新增tuser、vuser角色  
+![img](images/jenkins/jenkins-49.png)
+
+- 点击Assign Roles  
+![img](images/jenkins/jenkins-50.png)
+
+- 给vuser用户分配Global Roles和Item Roles   
+![img](images/jenkins/jenkins-51.png)
+
+
