@@ -245,23 +245,38 @@ spec:
 ```
 
 ## Jenkins安装向导
+- 替换jenkins服务器的default.json    
+sed -i 's/http:\/\/updates.jenkins-ci.org\/download/https:\/\/mirrors.tuna.tsinghua.edu.cn\/jenkins/g' /data/jenkins/home/updates/default.json
+sed -i 's/http:\/\/www.google.com/https:\/\/www.baidu.com/g' /data/jenkins/home/updates/default.json
+
+- 重启jenkins，确保让default.json生效  
+
 - 使用浏览器访问<http://192.168.0.10:30010/>，输入密码并继续  
 ![img](images/jenkins/jenkins-1.png)
 
-- 默认配置下安装插件特慢，点击X关闭向导  
+- 点击安装推荐的插件  
 ![img](images/jenkins/jenkins-2.png)
 
-- 点击开始使用jenkins  
+- 安装中  
+![img](images/jenkins/jenkins-2-1.png)
+
+- 点击使用admin账户继续    
 ![img](images/jenkins/jenkins-3.png)
 
+- 点击保存并完成    
+![img](images/jenkins/jenkins-3-1.png)
+
+- 点击开始使用jenkins  
+![img](images/jenkins/jenkins-3-2.png)
+
 ## 设置admin密码
-- 点击People  
+- 点击用户列表  
 ![img](images/jenkins/jenkins-4.png)
 
 - 点击admin  
 ![img](images/jenkins/jenkins-5.png)
 
-- 点击Configure
+- 点击设置
 ![img](images/jenkins/jenkins-6.png)
 
 - 输入密码，然后保存  
@@ -274,7 +289,7 @@ spec:
 - 点击Configure Global Security   
 ![img](images/jenkins/jenkins-13.png)
 
-- 取消勾选Prevent Cross Site Request Forgery exploits，然后保存  
+- 取消勾选“防止跨站点请求伪造”，然后保存  
 ![img](images/jenkins/jenkins-14.png)
 
 ## 安装插件  
@@ -284,45 +299,13 @@ spec:
 - 点击Manage Plugins  
 ![img](images/jenkins/jenkins-9.png)
 
-- 点击Advanced    
+- 点击Available      
 ![img](images/jenkins/jenkins-10.png)
 
-- 删除jenkins服务器的default.json文件  
-rm -f /data/jenkins/home/updates/default.json
-
-- 在Update Site中输入<https://www.gaozhengzhou.com/jenkins/default.json>，然后保存    
-![img](images/jenkins/jenkins-11.png)
-
-- 点击Available      
-![img](images/jenkins/jenkins-12.png)
-
 - 选中安装以下插件  
-```官方推荐
-Folders
-OWASP Markup Formatter
-Build Timeout
-Credentials Binding
-Timestamper
-Workspace Cleanup
-Ant
-Gradle
-Pipeline
-GitHub Branch Source
-Pipeline: GitHub Groovy Libraries
-Pipeline: Stage View
-Git
-Subversion
-SSH Build Agents
-Matrix Authorization Strategy
-PAM Authentication
-LDAP
-Email Extension
-Mailer
-Localization: Chinese (Simplified)
 ```
-
-```个人推荐
 Role-based Authorization Strategy
+
 ```
 
 
