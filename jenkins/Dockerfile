@@ -42,8 +42,8 @@ RUN curl --silent --location https://www.gaozhengzhou.com/kubernetes/kubernetes.
         yum install -y kubectl;
 
 # install jenkins jnlp agent
-RUN wget https://www.gaozhengzhou.com/jenkins/docker/agent/agent.jar -O /usr/share/jenkins/agent.jar; \
-        wget https://www.gaozhengzhou.com/jenkins/docker/agent/jenkins-agent -O /usr/local/bin/jenkins-agent; \
+RUN wget https://www.gaozhengzhou.com/jenkins/agent/agent.jar -O /usr/share/jenkins/agent.jar; \
+        wget https://www.gaozhengzhou.com/jenkins/agent/jenkins-agent -O /usr/local/bin/jenkins-agent; \
         chmod +x /usr/local/bin/jenkins-agent;
 
 # git-ssh
