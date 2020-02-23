@@ -10,7 +10,7 @@ docker build --tag=registry-vpc.cn-shenzhen.aliyuncs.com/lhs11/jenkins:latest .
 - 推送镜像到私有仓库  
 docker push registry-vpc.cn-shenzhen.aliyuncs.com/lhs11/jenkins:latest
 
-## master节点部署
+## Master节点部署
 - 方法一：docker环境    
 docker run -d --restart=unless-stopped -p 30010:8080 -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker -v /data:/data registry-vpc.cn-shenzhen.aliyuncs.com/lhs11/jenkins:latest
 
@@ -245,7 +245,7 @@ spec:
 ```
 
 ## Jenkins安装向导
-- 使用浏览器访问http://192.168.0.10:30010/，输入密码并继续  
+- 使用浏览器访问<http://192.168.0.10:30010/>，输入密码并继续  
 ![img](images/jenkins/jenkins-1.png)
 
 - 默认配置下安装插件特慢，点击X关闭向导  
@@ -290,7 +290,7 @@ spec:
 - 删除jenkins服务器的default.json文件  
 rm -f /data/jenkins/home/updates/default.json
 
-- 在Update Site中输入https://www.gaozhengzhou.com/jenkins/default.json，然后保存    
+- 在Update Site中输入<https://www.gaozhengzhou.com/jenkins/default.json>，然后保存    
 ![img](images/jenkins/jenkins-11.png)
 
 - 点击Available      

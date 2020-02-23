@@ -59,8 +59,6 @@ RUN set -eux; \
         echo "Asia/Shanghai" > /etc/timezone;
 
 # env
-ENV JENKINS_UC=https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates
-ENV JENKINS_UC_EXPERIMENTAL=https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/experimental
 ENV JENKINS_HOME=/data/jenkins/home
 ENV CREDENTIALS_HOME=/data/jenkins/credentials
 ENV REPOSITORY_HOME=/data/jenkins/repository
