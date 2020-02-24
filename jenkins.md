@@ -450,4 +450,15 @@ docker run -d --restart=unless-stopped -e JENKINS_URL=http://192.168.0.68:30010/
 - 给vuser用户分配Global Roles和Item Roles   
 ![img](images/jenkins/jenkins-51.png)
 
+### Pipeline样例
+- git仓库说明  
+`git@192.168.0.20:protected/jenkins.git`  ## jenkins的pipeline脚本
+
+`git@192.168.0.20:protected/config.git`  ## 各项目配置文件
+
+`git@192.168.0.20:gzz/demo.git`  ## maven项目源码
+
+- job配置  
+
+
 
