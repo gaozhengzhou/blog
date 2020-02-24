@@ -1,9 +1,3 @@
-## docker run -d --restart=unless-stopped -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker jenkins/jenkins:lts-centos /bin/bash
-## http://mirrors.jenkins-ci.org/status.html
-## https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json
-## https://www.jianshu.com/p/0aef1cc27d3d
-## https://www.cnblogs.com/lvcisco/p/12030494.html
-## https://blog.51cto.com/14143894/2465983?source=dra
 FROM jenkins/jenkins:lts-centos
 USER root
 
