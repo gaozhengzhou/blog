@@ -33,7 +33,7 @@ pipeline {
                         set -eux
                         cd ${JENKINS_HOME}/workspace/config/ && git pull origin master
                         cd ${WORKSPACE}/${PROJECT_NAME} && git clean -dfx
-                        rsync -azv --exclude=.git --exclude=README.md ${JENKINS_HOME}/workspace/config/config_p/${PROJECT_NAME}/* ${WORKSPACE}/${PROJECT_NAME}
+                        rsync -azv --exclude=.git --exclude=README.md ${JENKINS_HOME}/workspace/config/production/${PROJECT_NAME}/* ${WORKSPACE}/${PROJECT_NAME}
                     '''
                 }
             }
