@@ -1,3 +1,4 @@
+## https://www.gaozhengzhou.com/#/jenkins
 FROM jenkins/jenkins:lts-centos
 USER root
 
