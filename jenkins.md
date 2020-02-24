@@ -452,11 +452,39 @@ docker run -d --restart=unless-stopped -e JENKINS_URL=http://192.168.0.68:30010/
 
 ### Pipeline样例
 - git仓库说明  
-`git@192.168.0.20:protected/jenkins.git`  ## jenkins的pipeline脚本
 
+`git@192.168.0.20:protected/jenkins.git`  ## jenkins的pipeline脚本
+jenkins
+├── Dockerfile 
+├── Jenkinsfile
+└── kube
+     ├── Jenkinsfile
+     └── ucs.yml
+     
 `git@192.168.0.20:protected/config.git`  ## 各项目配置文件
+config
+└── production
+    └── demo
+       └── src
+           └── main
+               └── resources
+                   ├── bootstrap-production.yml
+                   ├── bootstrap.yml
+                   └── log4j2-spring-production.xml
 
 `git@192.168.0.20:gzz/demo.git`  ## maven项目源码
+demo
+├── pom.xml
+├── README.md
+└── src
+    └── main
+        ├── java
+        └── resources
+            ├── bootstrap-dev.yml
+            ├── bootstrap-production.yml
+            ├── bootstrap.yml
+            ├── log4j2-spring-dev.xml
+            └── log4j2-spring-production.xml
 
 - job配置  
 
