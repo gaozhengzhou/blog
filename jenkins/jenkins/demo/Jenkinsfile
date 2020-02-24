@@ -1,0 +1,84 @@
+pipeline {
+    agent any
+    parameters{
+        string(name:'gitBranch', defaultValue:'demo_t', description:'git branch for current deployment')
+    }
+
+    environment {
+        ENVIRONMENT = 'test'
+        PROJECT_NAME = 'demo'
+        TAG_NAME = "${currentBuild.number}_${currentBuild.timeInMillis}"
+        DOCKER_FILE = "../${ENVIRONMENT}/${PROJECT_NAME}/Dockerfile"
+        TARGET_PATH = 'target'
+        GIT_URL = 'git@192.168.0.20:gzz/demo.git'
+        DOCKER_NAMESPACE = 'lhs11'
+        K8S_KUBE_CONFIG = "${KUBE_CREDENTIALS_HOME}/t_alik8s_config"
+        K8S_NAMESPACE = 'ldx'
+    }
+    stages {
+        stage('Pull Sources Code') {
+            steps {
+                dir(PROJECT_NAME) {
+                    echo 'current directory'
+                    sh 'pwd'
+                    git branch: gitBranch, url: GIT_URL
+                }
+            }
+        }
+        stage("Rsync Config"){
+            steps{
+                dir(PROJECT_NAME) {
+                    echo 'Rsync... '
+                    sh '''
+                        set -eux
+                        cd ${JENKINS_HOME}/workspace/config/ && git pull origin master
+                        cd ${WORKSPACE}/${PROJECT_NAME} && git clean -dfx
+                        rsync -azv --exclude=.git --exclude=README.md ${JENKINS_HOME}/workspace/config/config_p/${PROJECT_NAME}/* ${WORKSPACE}/${PROJECT_NAME}
+                    '''
+                }
+            }
+        }
+        stage("Maven Build"){
+            steps{
+                dir(PROJECT_NAME) {
+                    echo 'mvn install '
+                    sh '''
+
+                      mvn clean install -Dmaven.test.skip=true -U --settings ${MAVEN_CREDENTIALS_HOME}/settings-production.xml
+                    '''
+                }
+            }
+        }
+        stage('Build Docker') {
+            steps {
+                echo 'Building..'
+                dir(PROJECT_NAME) {
+                    sh '''
+                        set -eux
+                        cp ${DOCKER_FILE} ${TARGET_PATH}/ -rp
+                       docker --config ${DOCKER_CREDENTIALS_HOME} build --tag=${DOCKER_REGISTRY}/${DOCKER_NAMESPACE}/${PROJECT_NAME}:${TAG_NAME} ${TARGET_PATH}
+                    '''
+                }
+            }
+        }
+        stage('Push Image') {
+            steps {
+                echo 'Pushing..'
+                sh '''
+                   set -eux
+                   docker --config ${DOCKER_CREDENTIALS_HOME} push ${DOCKER_REGISTRY}/${DOCKER_NAMESPACE}/${PROJECT_NAME}:${TAG_NAME}
+                '''
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying..'
+                sh '''
+                    set -eux
+                    kubectl --kubeconfig=${K8S_KUBE_CONFIG} set image deployment/${PROJECT_NAME} ${PROJECT_NAME}=${DOCKER_REGISTRY}/${DOCKER_NAMESPACE}/${PROJECT_NAME}:${TAG_NAME} --namespace=${K8S_NAMESPACE}
+                    redis-cli -h ${JENKINS_REDIS_HOST} hset jenkins:${ENVIRONMENT}:${K8S_NAMESPACE} ${PROJECT_NAME} ${DOCKER_REGISTRY}/${DOCKER_NAMESPACE}/${PROJECT_NAME}:${TAG_NAME}
+                 '''
+            }
+        }
+    }
+}

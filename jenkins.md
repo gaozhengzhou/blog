@@ -453,14 +453,16 @@ docker run -d --restart=unless-stopped -e JENKINS_URL=http://192.168.0.68:30010/
 ### Pipeline样例
 - git仓库说明  
 
+<https://github.com/gaozhengzhou/blog/tree/master/jenkins/pipeline>
 ```
-git@192.168.0.20:protected/jenkins.git  ## jenkins的pipeline脚本
-jenkins
-├── Dockerfile 
-├── Jenkinsfile
-└── kube
-     ├── Jenkinsfile
-     └── ucs.yml
+git@192.168.0.20:protected/pipeline.git  ## jenkins的pipeline脚本
+pipeline
+└── demo
+    ├── Dockerfile 
+    ├── Jenkinsfile
+    └── kube
+         ├── Jenkinsfile
+         └── demo.yml
 ```
 
 ```
@@ -488,11 +490,17 @@ demo
             ├── bootstrap-dev.yml
             ├── bootstrap-production.yml
             ├── bootstrap.yml
-            ├── log4j2-spring-dev.xml
-            └── log4j2-spring-production.xml
 ```
 
-- job配置  
+- demo_t_kube配置(部署K8S基础设施)
 
+![img](images/jenkins/jenkins-52.png)
+![img](images/jenkins/jenkins-53.png)
+![img](images/jenkins/jenkins-54.png)
 
+- demo_t配置(打包发布项目)
+
+![img](images/jenkins/jenkins-52.png)
+![img](images/jenkins/jenkins-53.png)
+![img](images/jenkins/jenkins-55.png)
 
