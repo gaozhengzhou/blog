@@ -15,7 +15,7 @@ RUN yum install -y epel-release; \
         yum install -y libtool-ltdl;
 
 # install maven git curl wget redis etc.
-RUN yum install -y maven git curl wget redis;
+RUN yum install -y maven git curl wget redis rsync;
 
 # install python3
 RUN yum install -y python3; \
