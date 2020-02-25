@@ -4,4 +4,4 @@
 >忆往昔，年少轻狂时，俱远矣；  
 >看今日，而立之年始，继拼之！
 
-![img](images/about/keyboard.png)
+![img](images/about/keyboard.jpg)
