@@ -5,4 +5,4 @@
 >自从盘古破鸿蒙，  
 >开辟从兹清浊辨。  
 
-![img](images/about/vikings.png)
+![img](images/about/sprouting.jpg)
