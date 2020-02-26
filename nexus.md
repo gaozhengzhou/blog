@@ -90,7 +90,7 @@ serverurl=AUTO                ; override serverurl computation (childutils)
 添加服务  
 supervisorctl update
 
-- yapi服务管理    
+- nexus服务管理    
 
 supervisorctl status nexus  
 supervisorctl start nexus  
