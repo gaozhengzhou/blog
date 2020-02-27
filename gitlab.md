@@ -9,16 +9,10 @@ https://docs.gitlab.com/ee/install/docker.html
     -v /data/gitlab/etc:/etc/gitlab \
     -v /data/gitlab/log:/var/log/gitlab \
     -v /data/gitlab/data:/var/opt/gitlab \
-    -p 8022:8022 \
+    -p 8022:22 \
     -p 8091:8091 \
     --name gitlab \
     gitlab/gitlab-ce:11.4.4-ce.0
-```
-
-- 修改sshd端口  
-docker exec -ti gitlab vi /etc/ssh/sshd_config
-```
-Port 8022
 ```
 
 - 修改配置文件  
