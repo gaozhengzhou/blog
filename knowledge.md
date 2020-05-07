@@ -12,3 +12,10 @@
 ## Kubernetes部署方案
 ![img](images/knowledge/k8s-deployment.png)
 
+## DDD概述
+![img](images/knowledge/ddd-summary.png)
+
+
+## DDD分层架构
+![img](images/knowledge/ddd-layer.png)
+
