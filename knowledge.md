@@ -3,9 +3,6 @@
 ## 技术栈
 ![img](images/knowledge/stack.png)
 
-## 阿里云服务
-![img](images/knowledge/aliyun.png)
-
 ## Maxwell+Kafka数据订阅方案
 ![img](images/knowledge/maxwell.png)
 
