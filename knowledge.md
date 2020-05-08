@@ -18,3 +18,6 @@
 ## DDD分层架构
 ![img](images/knowledge/ddd-layer.png)
 
+## DDD元素
+![img](images/knowledge/ddd-model.png)
+
