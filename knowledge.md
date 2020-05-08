@@ -15,7 +15,6 @@
 ## DDD概述
 ![img](images/knowledge/ddd-summary.png)
 
-
 ## DDD分层架构
 ![img](images/knowledge/ddd-layer.png)
 
