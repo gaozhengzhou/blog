@@ -1,5 +1,5 @@
 ## https://www.gaozhengzhou.com/#/jenkins
-FROM jenkins/jenkins:lts-centos
+FROM jenkins/jenkins:2.182-centos
 USER root
 
 # create directory
