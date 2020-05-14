@@ -1,5 +1,5 @@
 ## https://www.gaozhengzhou.com/#/jenkins
-FROM jenkins/jenkins:lts-centos
+FROM jenkins/jenkins:2.182-centos
 USER root
 
 # create directory
@@ -23,14 +23,16 @@ RUN yum install -y python3; \
         ln -s /usr/bin/pip3 /usr/bin/pip;
 
 # install nodejs
-RUN yum install -y nodejs; \
-        npm install -g cnpm --registry=https://registry.npm.taobao.org; \
+RUN wget https://nodejs.org/dist/v12.16.3/node-v12.16.3-linux-x64.tar.xz -O /node-v12.16.3-linux-x64.tar.xz; \
+		tar xvf node-v12.16.3-linux-x64.tar.xz;
+ENV PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/node-v12.16.3-linux-x64/bin"
+RUN  npm install -g cnpm --registry=https://registry.npm.taobao.org; \
         npm config set registry https://registry.npm.taobao.org/;
 
 # install yarn
-RUN curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | tee /etc/yum.repos.d/yarn.repo; \
-        yum install -y yarn; \
+RUN cnpm install yarn -g; \
         yarn config set registry https://registry.npm.taobao.org/;
+
 
 # install kubectl
 RUN curl --silent --location https://www.gaozhengzhou.com/kubernetes/kubernetes.repo | tee /etc/yum.repos.d/kubernetes.repo; \
@@ -53,6 +55,11 @@ RUN set -eux; \
         ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime; \
         echo "Asia/Shanghai" > /etc/timezone;
 
+#设置系统编码
+RUN yum install kde-l10n-Chinese -y
+RUN yum install glibc-common -y
+RUN localedef -c -f UTF-8 -i zh_CN zh_CN.utf8
+
 # env
 ENV JENKINS_HOME=/data/jenkins/home
 ENV CREDENTIALS_HOME=/data/jenkins/credentials
@@ -63,4 +70,4 @@ ENV MAVEN_CREDENTIALS_HOME=${CREDENTIALS_HOME}/maven
 ENV SSH_CREDENTIALS_HOME=${CREDENTIALS_HOME}/ssh
 ENV GIT_SSH=/usr/local/bin/git-ssh.sh
 ENV GIT_KEYFILE=${SSH_CREDENTIALS_HOME}/id_rsa
-
+ENV LC_ALL=zh_CN.UTF-8
