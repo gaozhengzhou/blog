@@ -57,6 +57,13 @@ rejectedExecutionHanlder:
 ## 分布式事务
 
 ## JDK8新特性
+1. 增加了Lambda表达式和函数式编程
+2. 增加了方法和构造函数的引用
+3. 接口增强了，增加了默认方法和静态方法
+4. 集合引入了流式操作，流操作分为中间操作和最终操作，流并发分为串行流和并行流，实现了集合的过滤、排序和映射等操作
+5. 增加了Optional、Predicate、Function、Supplier、Consumer、Comparator等接口
+6. 增加了全新的Date API, 在java.time包，有LocalDateTime，LocalDate，LocalTime, Clock, Timezones, Instant, DateTimeFormatter
+
 
 ## SpringBoot组件
 
@@ -69,3 +76,10 @@ rejectedExecutionHanlder:
 ## 什么开发模式可以避免OOM
 
 ## 中台
+
+## Kafka为什么快
+1. kafka采用的是顺序IO写入
+2. 采用内存映射文件（Memory Mapped Files）,利用操作系统的分页存储来实现内存和文件的直接映射，落盘分为异步和同步，由producer.type控制
+3. 读取数据采用了基于sendfile的zero copy，传统方式“硬盘—>内核buf—>用户buf—>socket相关缓冲区—>协议引擎”， sendfile减少了copy到用户buf一步
+4. 采用批量压缩消息，降低网络IO的使用
+
