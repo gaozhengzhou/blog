@@ -5,6 +5,8 @@
 Thank you for giving me this opportunity for this interview.
 My Chinese name is GaoZhengZhou and you can call me Joe which is my English name.
 
+
+
 That’s all. Thank you for giving me the chance.
 Thank you!
 ```
@@ -72,6 +74,8 @@ java的反射机制是指在运行时可以动态加载类，查看类的信息�
 - DiscardOldestPolicy:  丢弃队列里最旧的那个任务，再尝试执行当前任务
 
 ## 设计模式 
+
+
 ### 开发原则  
 1. 开闭原则
 2. 里氏替换原则
@@ -83,7 +87,7 @@ java的反射机制是指在运行时可以动态加载类，查看类的信息�
 ### 创建型
 1. 单例模式
 2. 原型模式
-3. 工程方法模式
+3. 工厂方法模式
 4. 抽象工厂模式
 5. 建造者模式
 
@@ -105,10 +109,12 @@ java的反射机制是指在运行时可以动态加载类，查看类的信息�
 6. 观察者模式
 
 ## AOP
+面向切面编程，使用动态代理实现，包含连接点，切入点，前置通知，后置通知，返回通知，异常通知，环绕通知。
 
 ## IoC
 
 ## 动态代理
+
 
 ## 分布式事务
 
@@ -122,10 +128,32 @@ java的反射机制是指在运行时可以动态加载类，查看类的信息�
 
 
 ## SpringBoot组件
+### 四大核心
+- AutoConfig自动配置
+- Starter起步依赖
+- Actuator监控
+- 命令行界面
+
+### 常用组件
+- Web Starter
+- Test Starter
+- Data JPA Starter
+- Mail Starter
 
 ## SpringCloud组件
+- Config
+- Eureka
+- Zuul
+- Security
+- Zipkin
+- Hystrix
+- Feign Client
+- Ribbon
+- Turbine
+- Spring Boot Admin
 
 ## JWT组成
+![img](images/java/jwt.png)
 
 ## Dockerfile常用指令
 
@@ -134,6 +162,7 @@ java的反射机制是指在运行时可以动态加载类，查看类的信息�
 ## 中台
 ### 用户中台
 ### 支付中台
+
 ### 数据中台
 
 ## 架构文档输出
@@ -153,3 +182,22 @@ java的反射机制是指在运行时可以动态加载类，查看类的信息�
 
 ## redis遇到瓶颈怎么处理
 
+## DDD
+![img](images/java/complexity-of-domain-logic.png)
+
+![img](images/java/domain-centric-architecture.png)
+### 领域对象（entity）
+- 聚合根
+- 实体
+- 值对象
+- 领域的数据与行为
+- 数据和行为应该与业务产品上的行为关联。领域对象通常是有状态的，理想情况下，我们的领域对象行为应该和产品业务定义意义映射
+- 领域对象不应该与其他的模型有交互，不应该持久化数据
+
+### 领域服务（service）
+- 构造（复杂）的领域对象
+- 与repository打交道
+- 调用其他限界上下文的内容
+- 提供领域方法给其他界限上下文/应用程序调用
+
+## netty框架
