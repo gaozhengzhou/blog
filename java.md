@@ -9,6 +9,11 @@ That’s all. Thank you for giving me the chance.
 Thank you!
 ```
 ## JVM内存模型
+### JVM 1.7内存模型
+![img](images/java/jvm-1.7-runtime.png)
+
+### JVM 1.8内存模型
+
 
 ## 垃圾回收机制
 
