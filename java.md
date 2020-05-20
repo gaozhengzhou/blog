@@ -18,6 +18,9 @@ Thank you!
 ## 反射
 java的反射机制是指在运行时可以动态加载类，查看类的信息，生成对象，操作对象，获取对象信息。
 
+## 集合
+
+
 ## 多线程
 ### 线程生命周期
 ![img](images/java/thread-lifecycle.jpg)
@@ -31,11 +34,10 @@ java的反射机制是指在运行时可以动态加载类，查看类的信息�
 ![img](images/java/thread-ThreadPoolExecutor.png)
 
 ### 线程分类
-1. newCachedThreadPool 
-2. newFixedThreadPool
-3. newSingleThreadExecutor
-4. newScheduleThreadPool
-5. newSingleThreadScheduledExecutor
+1. newCachedThreadPool 可缓存线程池，核心线程数为0，最大线程数为Integer.MAX_VALUE，默认存储队列为SynchronousQueue
+2. newFixedThreadPool 固定大小线程池，核心线程数和最大线程数为构造参数值，默认存储队列为LinkedBlockingQueue，无界队列
+3. newSingleThreadExecutor 单一线程线程池，核心线程数和最大线程数为1，默认存储队列为LinkedBlockingQueue，无界队列
+4. newScheduleThreadPool 固定大小线程池，支持定时和周期性任务，核心线程数为构造参数值，最大线程数为Integer.MAX_VALUE，默认存储队列为DelayedWorkQueue
 
 ### 线程配置参数
 - corePoolSize: 核心线程数
@@ -122,9 +124,9 @@ java的反射机制是指在运行时可以动态加载类，查看类的信息�
 
 ## 架构文档输出
 1. pdm
-2. 业务流程图
-3. 模块组成图
-4. 时序图
+2. 业务流程图（UML状态图）
+3. UML用例图
+4. UML时序图
 5. api接口文档
 
 ## Kafka为什么快
@@ -133,3 +135,4 @@ java的反射机制是指在运行时可以动态加载类，查看类的信息�
 3. 读取数据采用了基于sendfile的zero copy，传统方式“硬盘—>内核buf—>用户buf—>socket相关缓冲区—>协议引擎”， sendfile减少了copy到用户buf一步
 4. 采用批量压缩消息，降低网络IO的使用
 
+## redis遇到瓶颈怎么处理
