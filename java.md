@@ -162,6 +162,20 @@ java的反射机制是指在运行时可以动态加载类，查看类的信息�
 ![img](images/java/jwt.png)
 
 ## Dockerfile常用指令
+FROM 设置基础镜像
+MAINTAINER 设置镜像作者
+RUN 运行的脚步
+CMD 容器启动后默认执行命令，docker run和dockerfile没指定ENTRYPOINT时执行
+LABEL 设置的标签
+EXPOSE 设置暴露的端口
+ENV 设置环境变量
+ADD 复制文件到镜像中，支持网络地址，自解压
+COPY 复制文件到镜像中，不支持网络地址，不自解压
+ENTRYPOINT 设置容器的入口程序
+VOLUME 设置挂载卷
+USER 设置运行用户
+WORKDIR 设置工作目录
+ARG 设置编译容器时加入的参数
 
 ## 什么开发模式可以避免OOM
 
