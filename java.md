@@ -2,10 +2,16 @@
 
 ## 英文自我介绍
 ```
-Thank you for giving me this opportunity for this interview.
+Thank you for giving me this interview opportunity.
 My Chinese name is GaoZhengZhou and you can call me Joe which is my English name.
 
-
+I was born in October 1986. and I graduated from college in 2008 and worked for more than 10 years. 
+I worked in insurance companies as a telemarketing, customer service system, and call center system development.
+I also did erp system development, and I did education system and training system development in school.
+Have done mall system development in LvHuaSuan company. 
+I am familiar with linux system, spring cloud, jenkins ci/cd, docker and kubernetes. 
+During the LvHuaSuan work of the trip, I completed the Jenkins ci/cd online, 
+completed the spring cloud microservice online, and completed the kubernetes containerized deployment.
 
 That’s all. Thank you for giving me the chance.
 Thank you!
@@ -232,9 +238,6 @@ ARG 设置编译容器时加入的参数
 - 与repository打交道
 - 调用其他限界上下文的内容
 - 提供领域方法给其他界限上下文/应用程序调用
-
-## netty框架
-
 
 ## 谈谈你对OOP的理解
 
