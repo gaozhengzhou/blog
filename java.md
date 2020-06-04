@@ -5,7 +5,7 @@
 Thank you for giving me this interview opportunity.
 My Chinese name is GaoZhengZhou and you can call me Joe which is my English name.
 
-I was born in October 1986. and I graduated from college in 2008 and worked for more than 10 years. 
+I was born in October 1986. I graduated from college in 2008 and worked for more than 10 years. 
 I worked in insurance companies as a telemarketing, customer service system, and call center system development.
 I also did erp system development, and I did education system and training system development in school.
 Have done mall system development in LvHuaSuan company. 
