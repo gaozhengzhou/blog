@@ -5,12 +5,13 @@
 Hi everyone, thank you for giving me this interview opportunity.
 My name is Joe, come from Guangdong Yangchun, graduated in 2008 and worked for more than 10 years.
 
-The first job in a company to managed linux server. The second job in a insurance company participute in
-the development of insurance management system. The third job in 中山大学 to  
+The first job in a company to managed linux server. The second job in a insurance company participate in
+the development of insurance management system. The third job in 中山大学 develop school management system.
+
+Since August 2018, entered 广东旅划算 company, in the sharing middle-end team, responsible for 
 
 
 That’s all. Thank you for giving me the chance.
-Thank you!
 ```
 ## JVM内存模型
 ### JVM 1.7内存模型
