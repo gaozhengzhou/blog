@@ -2,16 +2,12 @@
 
 ## 英文自我介绍
 ```
-Thank you for giving me this interview opportunity.
-My Chinese name is GaoZhengZhou and you can call me Joe which is my English name.
+Hi everyone, thank you for giving me this interview opportunity.
+My name is Joe, come from Guangdong Yangchun, graduated in 2008 and worked for more than 10 years.
 
-I was born in October 1986. I graduated from college in 2008 and worked for more than 10 years. 
-I worked in insurance companies as a telemarketing, customer service system, and call center system development.
-I also did erp system development, and I did education system and training system development in school.
-Have done mall system development in LvHuaSuan company. 
-I am familiar with linux system, spring cloud, jenkins ci/cd, docker and kubernetes. 
-During the LvHuaSuan work of the trip, I completed the Jenkins ci/cd online, 
-completed the spring cloud microservice online, and completed the kubernetes containerized deployment.
+The first job in a company to managed linux server. The second job in a insurance company participute in
+the development of insurance management system. The third job in 中山大学 to  
+
 
 That’s all. Thank you for giving me the chance.
 Thank you!
