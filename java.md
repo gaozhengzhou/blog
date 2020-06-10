@@ -231,7 +231,13 @@ ARG 设置编译容器时加入的参数
 ![img](images/java/domain-centric-architecture.png)
 
 ### 领域建模过程
+![img](images/java/ddd-domain-modeling-process.png)
 
+### 实体和值对象
+![img](images/java/ddd-entity-value-object.png)
+
+### 设计聚合流程
+![img](images/java/ddd-aggregate-flow.png)
 
 ### 领域对象（entity）
 - 聚合根
@@ -264,3 +270,13 @@ PROPAGATION_NEVER--以非事务方式执行，如果当前存在事务，则抛�
 - 站立会议
 - 解决技术难点
 - 技术培训
+
+## 微服务经典案例
+
+## 微服务怎么拆分
+
+## 对敏捷开发的了
+
+## 测试怎么做
+
+
