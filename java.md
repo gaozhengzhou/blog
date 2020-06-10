@@ -279,4 +279,12 @@ PROPAGATION_NEVER--以非事务方式执行，如果当前存在事务，则抛�
 
 ## 测试怎么做
 
+## volatile关键字
+
+## transient关键字
+
+## java对象头组成
+
+## CAS原理
+CAS：Compare and Swap，即比较再交换。
 
