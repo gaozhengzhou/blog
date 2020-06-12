@@ -9,14 +9,14 @@ The second job was at an insurance company, I participated(怕踢死呸铁) in t
 The third job was at Sun Yat-sen University, responsible for the development of the school management system.
 
 Since August 2018(twenty-eighteen), I have worked for the 广东旅划算 company as a member of the sharing group,
-responsible for company server maintenance, infrastructure(in扶罗structure) development, 
-public package development and user system development.
+responsible for company server maintenance(面特能死), infrastructure(in扶罗structure) development, 
+public package development, user system development and the other business system development.
 
 During the past two years in 广东旅划算, I mainly participated(怕踢死呸铁) in the following things: 
 1. Completed the CI/CD system deployment using jenkins pipline.
-2. Completed the integration(in特个雷神) the spring cloud micro(卖课楼)-service framework. 
+2. Completed the integration(in特个雷神) of the spring cloud micro(卖课楼)-service framework. 
 3. Completed the containerized(container赖斯) deployment using kubernetes. 
-4. Completed the User middle-end system development.
+4. Completed the user middle-end system development.
 
 Technically, I am familiar with spring boot, spring cloud, kubernetes, docker, jenkins and linux.
 
@@ -297,11 +297,23 @@ PROPAGATION_NEVER--以非事务方式执行，如果当前存在事务，则抛�
 - 数据权限
 
 ## 微服务怎么拆分
-1. 
+- 按业务开发，一个服务一个项目
+- 实际上考虑到的是解耦
 
 ## 对敏捷开发的了解
+- 敏捷开发
+做一个产品，很多情况下，我们不可能考虑到全部内容，或者有些内容肯定会变化，所有我们先根据主路径，
+完成主要功能，实现最小闭环，再通过不断反馈，不断小迭代，打磨完善产品。产品、测试、开发人员共同参与
+每天通过早会的方式，多交流，加上一些必要的文档。
+
+
+- 瀑布开发
+一个工程分为多个阶段，需求分析、系统设计、系统开发、测试交付，使用里程碑的方式，
+明确各个阶段的输入输出产物，如果达不到要求的输出，下一阶段工作就不展开，重视过程文档。
+适合相对稳定的大型项目。
 
 ## 测试怎么做
+- 在代码层面要写单一测试。
 
 ## volatile关键字
 
