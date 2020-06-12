@@ -2,17 +2,29 @@
 
 ## 英文自我介绍
 ```
-Hi everyone, thank you for giving me this interview opportunity.
-My name is Joe, come from Guangdong Yangchun, graduated in 2008 and worked for more than 10 years.
+Hi everyone, My name is Gao Zhengzhou and I am from Guangdong Yangchun, I graduated in 2008 and worked for more than 10 years.
 
-The first job in a company to managed linux server. The second job in a insurance company participate in
-the development of insurance management system. The third job in 中山大学 develop school management system.
+My first job was in an e-commerce(一com磨s) company, responsible for Linux server maintenance(面特能死).
+The second job was at an insurance company, I participated(怕踢死呸铁) in the development of an insurance management system.
+The third job was at Sun Yat-sen University, responsible for the development of the school management system.
 
-Since August 2018, entered 广东旅划算 company, in the sharing middle-end team, responsible for 
+Since August 2018(twenty-eighteen), I have worked for the 广东旅划算 company as a member of the sharing group,
+responsible for company server maintenance, infrastructure(in扶罗structure) development, 
+public package development and user system development.
 
+During the past two years in 广东旅划算, I mainly participated(怕踢死呸铁) in the following things: 
+1. Completed the CI/CD system deployment using jenkins pipline.
+2. Completed the integration(in特个雷神) the spring cloud micro(卖课楼)-service framework. 
+3. Completed the containerized(container赖斯) deployment using kubernetes. 
+4. Completed the User middle-end system development.
 
-That’s all. Thank you for giving me the chance.
+Technically, I am familiar with spring boot, spring cloud, kubernetes, docker, jenkins and linux.
+
+And I like reading and exercising.
+
+That’s all. Thank you for giving me this opportunity to introduce myself.
 ```
+
 ## JVM内存模型
 ### JVM 1.7内存模型
 ![img](images/java/jvm-1.7-runtime.png)
@@ -273,9 +285,21 @@ PROPAGATION_NEVER--以非事务方式执行，如果当前存在事务，则抛�
 
 ## 微服务经典案例
 
-## 微服务怎么拆分
+用户中台
+- 应用
+- 资源
+- 权限
+- 角色
+- 用户
+- 组织
+- 菜单权限
+- 按钮权限
+- 数据权限
 
-## 对敏捷开发的了
+## 微服务怎么拆分
+1. 
+
+## 对敏捷开发的了解
 
 ## 测试怎么做
 
